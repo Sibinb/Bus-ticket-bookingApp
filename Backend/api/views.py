@@ -1,15 +1,17 @@
 from rest_framework.decorators import permission_classes, api_view
 from rest_framework.response import Response
-from .models import CustomUser, Bus, Seats, Locations
-from rest_framework.permissions import IsAuthenticated
+from .models import CustomUser, Bus, Seats, Locations,Features,BusPics
+from rest_framework.permissions import IsAuthenticated,IsOwner
 from django.contrib.auth import authenticate
 from .utils import sendotp
-from .serializers import UserSerializer, BusSerializer, SeatSerializer, LocationSerializer
+from .serializers import UserSerializer, BusSerializer, SeatSerializer,BusPictureSerializer,FeatureSerializer
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework import status
 from rest_framework_simplejwt.tokens import RefreshToken
+import json
+from django.core.files.images import ImageFile
 
 
 
@@ -118,51 +120,59 @@ def approve(request, id):
 
 
 @api_view(["POST"])
+@permission_classes([IsOwner])
 def add_bus(request):
     if request.method == "POST":
-        bus_name = request.POST.get('busname')
-        seats = request.POST.get('seats')
-        boardingpoint = request.POST.get('boardingpoint')
-        destination = request.POST.get('destination')
-        fare = request.POST.get('fare')
-        departure_date = request.POST.get('departure_date')
-        arrival_date = request.POST.get('arrival_date')
-        Route = request.POST.get('Route')
-        duration = request.POST.get("duration")
-        arrival_time = request.POST.get('arrival_time')
-        departure_time = request.POST.get('departure_time')
-        pic = request.FILES['img']
-        seats_data = seats.split(",")
-        route_data = Route.split(">")
-        bus = Bus.objects.create(Name=bus_name, fare=fare, pics=pic, departure_date=departure_date,
-                                 arrival_time=arrival_time, departure_time=departure_time, arrival_date=arrival_date, duration=duration)
-
-        for seat in seats_data:
-            Seats.objects.create(seat_no=seat, status="Available", bus=bus)
-        indx = 1
-        Locations.objects.create(bus=bus, Role="start", location=boardingpoint)
-        Locations.objects.create(bus=bus, Role="End", location=destination)
-        for route in route_data:
-            Locations.objects.create(bus=bus, Role=str(indx), location=route)
-            indx += 1
-        return Response({"message": "Bus Created!"}, status=status.HTTP_201_CREATED)
+        datas=request.POST['datas']
+        new_data=json.loads(datas)
+        bus_name = new_data['busName']
+        seats=new_data['seatInfos']
+        features=new_data["amenites"]
+        pics=request.FILES
+        bus=Bus(Name=bus_name,owner=request.user)
+        bus.save()
+        for key,value in  seats.items():
+            obj=Seats(bus=bus,seat_no=value,status='Available')
+            obj.save()
+        for item in features:
+            feature_obj=Features(bus=bus,feature=item['featureName'],icon=item['seaclectedIcon'])
+            feature_obj.save()
+        for key,value in pics.items():
+            picture_obj=BusPics(bus=bus,img=value)
+            picture_obj.save()
+        return Response({1:1})
 
 
 @api_view(['GET'])
-@permission_classes([IsAuthenticated])
+@permission_classes([IsOwner])
 def get_busdata(request):
     data = [];
-    buses = Bus.objects.all()
+    buses = Bus.objects.filter(owner=request.user).all()
     for bus in buses:
         serializer = BusSerializer(bus, many=False)
         bus_item = Response(serializer.data).data
+        
         seats = Seats.objects.filter(bus_id=bus.id)
         seatserializer = SeatSerializer(seats, many=True)
         seat_item = Response(seatserializer.data).data
         bus_item["Seats"] = seat_item
-        locations = Locations.objects.filter(bus_id=bus.id)
-        locationserializer = LocationSerializer(locations, many=True)
-        location_item = Response(locationserializer.data).data
-        bus_item["Route"] = location_item
+        
+        pics=BusPics.objects.filter(bus=bus)
+        pictureserializer=BusPictureSerializer(pics,many=True)
+        picture_set=Response(pictureserializer.data).data
+        bus_item["Pics"]=picture_set
+        
+        features=Features.objects.filter(bus=bus)
+        featureserializer=FeatureSerializer(features,many=True)
+        feature_set=Response(featureserializer.data).data
+        bus_item["Features"]=feature_set
+        
         data.append(bus_item)
     return Response(data, status=status.HTTP_200_OK)
+
+
+@api_view(['POST'])
+@permission_classes([IsOwner])
+def add_trip(request):
+    print(request.data)
+    return Response({1:1},status=status.HTTP_200_OK)

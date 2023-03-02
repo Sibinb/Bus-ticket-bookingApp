@@ -1,0 +1,35 @@
+.book_details{
+    padding: 35px;
+    background-color: rgb(240, 240, 251);
+}
+.book_details__body{
+    margin: 20px;
+    border: 1px solid rgb(42, 42, 192);
+    border-radius: 20px;
+    padding: 4%;
+}
+.ticket_info_head,.bus_info_head{
+    color: blue;
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: block;
+    text-align: center;
+}
+.businfo_busname{
+    color: blue;
+    font-weight: 700;
+    font-size: 1rem;
+    text-align: center;
+    display: block;
+}
+.businfo__seats,.businfo_ownername,.businfo_drivername,.businfo_driver_no,.businfo_licn_no,.businfo_bus_no{
+    font-size: 1.1rem;
+    color: rgb(82, 89, 114);
+}
+
+.businfo__seats span,.businfo_ownername span,.businfo_drivername span,.businfo_driver_no span
+,.businfo_licn_no span ,.businfo_bus_no span {
+    font-size: 1.2rem;
+    color: rgb(26, 25, 106);
+    margin: 5px;
+}

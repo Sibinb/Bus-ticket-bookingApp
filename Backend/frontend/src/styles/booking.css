@@ -1,0 +1,14 @@
+.booking-div{
+    width: 100%;
+}
+.booking__header{
+    padding: 20px;
+    background-color: white;
+}
+.booking__header h2{
+    font-weight: 600;
+}
+.booking__body{
+   padding: 5%;
+   background-color: rgb(240, 236, 236);
+}

@@ -1,0 +1,58 @@
+.seats_data_div{
+    min-height: 25vw;
+    background-color: rgb(251, 251, 239);
+    border-top: none;
+    border-radius: 20px;
+    border-bottom: none;
+}
+.seat_info{
+    border: 2px solid rgb(68, 68, 242);
+    height: 200px;
+    border-radius: 15px;
+    padding: 2px;
+    background-color: rgb(236, 238, 237);
+}
+.seat_obj{
+    height: 25px;
+    width: 25px;
+    border: 1px solid blue;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+.seat_obj_div{
+    width: 100%;
+}
+.seat-third-div{
+    align-items: center;
+}
+.cancel-btn-div button{
+  width: 15%;
+  height: 40px;
+  text-align: center;
+}
+.location-points{
+    background-color: rgb(249, 244, 244);
+}
+.location-points_h{
+    text-align: center;
+    background-color: white;
+    border-bottom: 3px solid rgb(224, 54, 54);
+    
+}
+.location-points_div{
+    padding: 10px;
+    max-height: 40vh;
+}
+.location-points_div::-webkit-scrollbar{
+    width: 2px;
+}
+@media (max-width:476px){
+    .seat-third-div{
+        align-items: normal;
+    } 
+    .cancel-btn-div button{
+        width: 25%;
+        height: 30px;
+        text-align: center;
+      }
+}

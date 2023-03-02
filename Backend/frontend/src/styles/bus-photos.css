@@ -1,0 +1,32 @@
+/* .div1,.div2{
+    width: 50% !important;
+} */
+.slider_container{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    max-height:300px ;
+    margin-top: 10px;
+    margin: 0px !important;
+    max-width: 75% !important;
+}
+.slider_container img{
+    border-radius: 10px;
+    border: .5px solid rgb(75, 75, 98);
+    max-width: 100% !important;
+}
+.bus_pics_slider-main{
+    overflow: hidden;
+    max-width: 75vw !important;
+    justify-content: center;
+    align-items: center;
+}
+@media (max-width:480px){
+    /* .div1,.div2{
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        width: 100% !;
+    } */
+    
+}

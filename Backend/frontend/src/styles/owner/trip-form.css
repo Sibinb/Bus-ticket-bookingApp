@@ -1,0 +1,29 @@
+.route-div{
+    box-shadow: rgb(194, 199, 199);
+    border: 1px solid rgb(157, 163, 246);
+    border-radius: 20px;
+    padding: 10px;
+    width: 100%;
+    margin: 5px;
+}
+.route-obj{
+    background-color: rgb(249, 247, 247);
+    color: rgb(50, 52, 56);
+    border-radius: 10px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    border: 1px solid rgb(160, 160, 247);
+}
+.route-obj span{
+    color: rgb(28, 78, 144);
+}
+.route-obj span span{
+    color: rgb(160, 156, 156);
+}
+.route-input-div{
+    margin: 5px;
+    padding: 10px;
+    color: blue;
+    border-radius: 10px;
+    border: 1px solid rgb(114, 187, 244);
+}

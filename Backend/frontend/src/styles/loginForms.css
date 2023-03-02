@@ -1,0 +1,9 @@
+.login-pic{
+    display: block;
+}
+
+@media (max-width:769px){
+   .login-pic{
+    display: none;
+   }
+}

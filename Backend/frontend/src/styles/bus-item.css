@@ -1,0 +1,311 @@
+.bus__item{
+  min-height: 30vh;
+  border: 2px solid rgb(28, 44, 145);
+  padding: 1.5vh;
+  border-radius: 25px;
+  justify-content: center;
+  align-items: center;
+}
+.first_row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-left: 3px;
+}
+.first_row div{
+  width: 16%;
+  display: flex;
+  justify-content: center;
+}
+.first_row h5{
+  font-weight: 700;
+  font-size: larger;
+  width: 30ch;
+  text-align: center;
+  color: #000d6b
+}
+.departure,.arrival{
+   font-size: 1.5rem;
+   font-weight: 500;
+   color: #000d6b;
+   flex-grow: 1;
+   text-align: center;
+}
+.duration{
+  font-size: 1.5rem;
+   font-weight: 400;
+   color:#000d6b;
+   flex-grow: 1;
+   text-align: center;
+}
+.fare{
+  font-size: 1rem;
+  width: 10ch;
+  text-align: center;
+  margin-right: 2%;
+  color: #000d6b;
+  font-weight: 400;
+  text-align: center;
+}
+.fare span{
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.rating{
+  height: 15px;
+  align-items: center;
+}
+.rating span{
+  font-size: 1rem;
+}
+.rating:hover{
+  color: black;
+}
+
+.second_row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding: 0px 9px;
+}
+.second_row h5{
+  font-size: medium;
+  font-weight: 300;
+  flex-grow: 1;
+}
+.departure_spot{
+  width: 12ch;
+  text-align: center;
+  color: #000d6b;
+
+}
+.arrival_spot{
+  width: 14ch;
+  text-align: center;
+  font-weight: 500;
+  color: #000d6b;
+}
+.empty{
+  flex-grow: 1;
+}
+.rating_count{
+  text-align: center;
+  font-weight: 500;
+}
+.seats{
+  width: 15ch;
+  text-align: center;
+  color: #000d6b;
+}
+.second_row div{
+  width: 16%;
+  display: flex;
+  justify-content: center;
+}
+.third_row div{
+  margin-top: 10px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.third_row{
+  padding: 10px 25px;
+  display: flex;
+  justify-content: space-between;
+}
+.third_row button{
+  border-radius: 5px;
+}
+.third_row button:hover{
+  text-decoration: underline;
+}
+.fourth_row{
+  display: flex;
+  font-weight: 300;
+  font-size: 1.3rem;
+  justify-content:end;
+}
+.fourth_row div{
+  margin: 5px 5px;
+}
+.fourth_row div:hover{
+  color: red;
+}
+.border_style{
+  color: red;
+  border-bottom: 1px solid red ;
+}
+
+@media (max-width:769px){
+  .fourth_row div{
+    font-size: 1rem;
+    margin:0px;
+    font-weight: 500;
+  }
+  .first_row h5{
+    font-weight: 700;
+    font-size: .8rem;
+    width: 40ch;
+  }
+  .departure,.arrival,.duration{
+    font-size:1.3rem ;
+  }
+}
+@media (max-width:460px){
+  .duration_div{
+    display: none !important;
+  }
+  .empty-div{
+    display: none !important;
+  }
+  .fourth_row div{
+    font-size: .8rem;
+  }
+  .first_row h5{
+    font-weight: 700;
+    font-size: .8rem;
+    width: 40ch;
+  }
+  .departure,.arrival,.duration{
+    font-size:1rem ;
+  }
+  .rating button {
+    font-size: .5rem;
+    height: fit-content;
+  }
+  .fare{
+    font-size: .7rem;
+  }
+  .fare span{
+    font-size: 1rem;
+  }
+  .second_row h5{
+      font-size: .7rem;
+      font-weight: 300;
+  }
+  .departure_spot{
+    font-size: .65rem;
+  }
+  .arrival_spot{
+    font-size: .65rem;
+  }
+  .rating_count{
+    font-size: .8rem;
+  }
+  .seats{
+    font-size: .65rem;
+  }
+  .third_row div{
+    font-size: .9rem;
+  }
+  .third_row button{
+    width: fit-content;
+  }
+  .bus__item{
+    margin: 0px 3px;
+  }
+}
+  @media (max-width:376px){
+
+    /* .departure,.arrival,.duration{
+      font-size:.9rem ;
+    } */
+    .rating button span{
+      font-size: .65rem;
+    }
+    .rating button {
+      font-size: .5rem;
+      height: fit-content;
+    }
+    .fare{
+      font-size: .65rem;
+    }
+    .fare span{
+      font-size: .8rem;
+    }
+    .second_row h5{
+        font-size: .65rem;
+        font-weight: 300;
+    }
+     .departure_spot{
+      font-size: .6rem;
+    }
+    /* .arrival_spot{
+      font-size: .57rem;
+    }  */
+    .rating_count{
+      font-size: .7rem;
+    }
+    .seats{
+      font-size: .57rem;
+    }
+    .third_row div{
+      font-size: .8rem;
+    }
+    .third_row button{
+      width: fit-content;
+      font-size: .5rem;
+    }
+    .bus__item{
+      margin: 0px 3px;
+    }
+    .fourth_row div{
+      font-size: .65rem;
+    }
+    .view-seats{
+      width: 25vw !important;
+    }
+}
+
+@media (max-width:325px){
+
+  .departure,.arrival,.duration{
+    font-size:.8rem ;
+  }
+  .rating button span{
+    font-size: .55rem;
+  }
+  .rating button {
+    font-size: .5rem;
+    height: max-content;
+    width: max-content;
+  }
+  .fare{
+    font-size: .59rem;
+  }
+  .fare span{
+    font-size: .8rem;
+  }
+  .second_row h5{
+      font-size: .59rem;
+      font-weight: 300;
+  }
+  .departure_spot{
+    font-size: .55rem;
+  }
+  .arrival_spot{
+    font-size: .55rem;
+  }
+  .rating_count{
+    font-size: .65rem;
+  }
+  .seats{
+    font-size: .55rem;
+  }
+  .third_row div{
+    font-size: .75rem;
+  }
+  .third_row button{
+    width: fit-content;
+    font-size: .49rem;
+  }
+  .bus__item{
+    margin: 0px 3px;
+  }
+  .fourth_row div{
+    font-size: .58rem;
+  }
+}
+

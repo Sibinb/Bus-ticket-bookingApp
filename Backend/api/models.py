@@ -14,14 +14,8 @@ class CustomUser(AbstractUser):
 
 class Bus(models.Model):
     Name=models.CharField(max_length=200)
-    fare=models.BigIntegerField()
-    pics=models.ImageField(upload_to='pics/')
-    arrival_date=models.CharField(max_length=100,default="0")
-    arrival_time=models.CharField(max_length=100,default="0")
-    departure_date=models.CharField(max_length=100,default="0")
-    departure_time=models.CharField(max_length=100,default="0")
     Rating=models.IntegerField(default=1)
-    duration=models.CharField(max_length=100,default="0")
+    owner=models.ForeignKey(CustomUser,on_delete=models.CASCADE)
 
 class Seats(models.Model):
     bus=models.ForeignKey(Bus,on_delete=models.CASCADE,default=1)
@@ -33,3 +27,12 @@ class Locations(models.Model):
    Role=models.CharField(max_length=100)
    location=models.CharField(max_length=100)
    price=models.BigIntegerField(default=0)
+   
+class Features(models.Model):
+    bus=models.ForeignKey(Bus,on_delete=models.CASCADE)
+    feature=models.CharField(max_length=100)
+    icon=models.CharField(max_length=64)
+    
+class BusPics(models.Model):
+    bus=models.ForeignKey(Bus,on_delete=models.CASCADE)
+    img=models.ImageField(upload_to="img/")

@@ -1,0 +1,54 @@
+.bookitem{
+    height: fit-content;
+    margin: 15px;
+    border:  1px solid blue;
+    border-radius: 15px;
+    display: flex;
+    color: rgb(15, 15, 90);
+    padding: 20px;
+    background-color: white;
+    
+}
+.bookitem div{
+    width: 50%;
+    text-align: start;
+}
+.bookitem div div{
+    margin: 10px;
+    text-align: start;
+}
+.travel{
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+.travel svg{
+    width: 15px;
+    margin: 5px;
+}
+.journey-date,.bookitem__seats,.pickup-point,.drop-point,.pickup-time,.drop-time,.travel_bus,.bus_no{
+    font-size: 1.1rem;
+    color: rgb(82, 89, 114);
+}
+.journey-date span,.bookitem__seats span,.bus_no span,.travel_bus span{
+    font-size: 1.2rem;
+    color: rgb(26, 25, 106);
+    margin: 5px;
+}
+.pickup-point span,.drop-point span,.drop-time span,.pickup-time span{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: rgb(26, 25, 106);
+    margin: 5px;
+}
+.bookitem_col1,.bookitem_col2{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.status::before{
+ content: "Status:";
+ margin-right: 10px;
+ font-size: 1.2rem;
+ font-weight: 500;
+}

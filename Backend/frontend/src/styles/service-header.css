@@ -1,0 +1,101 @@
+.service_header h3{
+    padding: 5px;
+    margin: 5px;
+    margin-left: 15px;
+    align-items: center;
+    display: flex;
+    font-size: 1.3rem;
+}
+.service_header h3 span{
+    font-size: 1rem;
+    width: 8ch;
+    font-weight: 500;
+    text-align: center;
+}
+.service_header h3 button:hover{
+    box-shadow: none;
+    outline: none;
+    font-weight: 700 !important;
+    color: black !important;
+}  
+.service_form{
+    padding: 0px 15px;
+}
+.service_form_element{
+    width: 20%; 
+    border-radius: 30px !important;
+}
+.service_form_element input{
+    border-radius: 10px !important;
+    margin: 5px 0px !important;
+}
+.arrow_icon{
+    display: flex;
+    align-items: center;
+    margin: 0px 5px;
+    margin-bottom: 10px;
+}
+.service_form_element button{
+    background-color:#000d6b ;
+    color: white;
+}
+
+@media (max-width:426px){
+    .service_header h3{
+        padding: 2px;
+        margin: 2px;
+        margin-left: 8px;
+        align-items: center;
+        display: flex;
+        font-size: 1rem;
+    }
+    .service_form_element button{
+        color: white;
+        font-size: .47rem;
+    }
+    .service_form{
+        padding: 0px 0px;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+    }
+    .service_form_element input{
+        margin: 0px 0px !important;
+    }
+    .btn-close{
+        font-size: 10px;
+    }
+}
+
+@media (max-width:325px){
+    .service_header h3{
+        padding: 2px;
+        margin: 2px;
+        margin-left: 8px;
+        align-items: center;
+        display: flex;
+        font-size: .9rem;
+    }
+    .service_header span{
+        font-size: .9rem !important;
+    }
+    .service_form div {
+        display: flex !important;
+        flex-direction: column;
+        align-items: start !important;
+        width: 100vw !important;
+    }
+    .service_form_element input{
+        width: 100vw !important;
+        text-align: center;
+    }
+    .btn-close{
+        margin: 0px 10vw;
+    }
+    .arrow_icon i{
+        margin: 0px 50vw;
+    }
+    .form__group{
+        margin: 0px !important;
+    }
+}

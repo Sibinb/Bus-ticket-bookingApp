@@ -1,0 +1,12 @@
+.service-div{
+display: flex;
+flex-direction: row;
+}
+
+
+@media (max-width:426px){
+    .service-div{
+        display: flex;
+        flex-direction: column;
+        }
+}

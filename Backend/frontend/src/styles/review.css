@@ -1,0 +1,55 @@
+.reviews_div{
+   padding: 2%;
+   min-height: 25vw;
+   height: 200px;
+   overflow:scroll;
+}
+.reviews_div::-webkit-scrollbar,.rating_progressbar::-webkit-scrollbar{
+    width: 2px;
+}
+.review_div,.review_heading{
+    font-size: .7rem;
+}
+.rating_progressbar{
+    width: 100%;
+}
+.review_div{
+    border:  1px solid rgb(71, 71, 244);
+    padding: 5px;
+    border-radius: 10px;
+    margin: 8px 0px;
+    gap: 2;
+}
+.review_content{
+    background-color: rgb(236, 236, 236);
+}
+.reviews_section{
+    overflow: auto;
+    height: 100%
+}
+.rating_progressbar{
+    overflow: auto;
+    height: 100%
+}
+
+@media screen and (max-width:426px){
+    .rating_progressbar{
+        font-size: .7rem;
+    }
+    .rating_progressbar h4{
+        font-size: 1rem;
+    }
+    .rating_progressbar div{
+        font-size: .7rem;
+        margin: 0px;
+    }
+    .rating_progressbar span{
+        margin-left: 5px;
+    }
+    .review_div,.review_heading{
+        font-size: .8rem;
+    }
+    .reviews_section h4 {
+      font-size: 1rem;
+    }
+}

@@ -1,0 +1,18 @@
+.owner-service__businfo{
+    min-height: 25vh;
+    background-color: rgb(250, 244, 241);
+    border: 1px solid blue;
+    border-radius: 15px;
+    padding: 5%;
+}
+
+/* SeatInformation Field css */
+.seat_main_row{
+    min-height: 25vh;
+    border-radius: 15px;
+    width: max-content;
+    background-color: rgb(232, 228, 224);
+}
+.seat_row div{
+    margin: 5px;
+}

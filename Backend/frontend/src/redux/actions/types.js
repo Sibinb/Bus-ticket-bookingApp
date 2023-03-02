@@ -1,0 +1,13 @@
+export const Register='Register';
+export const Tokens='Tokens';
+export const GET_OTP='GET_OTP';
+export const LOGIN_FAILED='LOGIN_FAILED';
+export const LOG_OUT='LOGOUT';
+export const USER_ROLE='USER_ROLE';
+export const SET_LOGIN_STATUS='SET_LOGIN_STATUS';
+export const FETCH_USER_DATA='FETCH_USER_DATA';
+export const FETCH_OWNER_DATA='FETCH_OWNER_DATA';
+export const ADD_BUS="ADD_BUS";
+export const GET_BUS_DATA="GET_BUS_DATA";
+export const CLEAR_TOKEN="CLEAR_TOKEN";
+export const Bus_REGISTRATION_STATUS="Bus_REGISTRATION_STATUS"
